@@ -90,7 +90,7 @@ const questions = {
         {
             question: "What makes Anoma’s consensus mechanism unique?",
             options: ["It uses Tendermint with intent processing", "It is proof-of-work only", "It has no consensus", "It uses Bitcoin mining pools"],
-            correct: 0
+            correct: 3
         },
         {
             question: "How do developers test and deploy applications on Anoma testnet?",
@@ -244,4 +244,5 @@ shareBtn.addEventListener('click', () => {
     const tweetText = `I scored ${score}/${currentQuestions.length} on the Anoma Quiz by Ap3xV! Are you a true believer? Take the quiz! #Anoma`;
     const url = 'https://example.com/anoma-quiz'; // Replace with actual URL if deployed
     window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}&url=${encodeURIComponent(url)}`, '_blank');
+
 });
