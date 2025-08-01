@@ -1,3 +1,5 @@
+// script.js
+
 const questions = {
     beginner: [
         {
@@ -90,7 +92,7 @@ const questions = {
         {
             question: "What makes Anoma’s consensus mechanism unique?",
             options: ["It uses Tendermint with intent processing", "It is proof-of-work only", "It has no consensus", "It uses Bitcoin mining pools"],
-            correct: 3
+            correct: 0
         },
         {
             question: "How do developers test and deploy applications on Anoma testnet?",
@@ -161,6 +163,8 @@ let currentQuestions = [];
 let currentIndex = 0;
 let score = 0;
 let selectedOption = -1;
+let shuffledOptions = []; // To store shuffled options for the current question
+let correctAnswer = ''; // To store the correct answer text for the current question
 
 const levelsDiv = document.getElementById('levels');
 const quizDiv = document.getElementById('quiz');
@@ -187,11 +191,21 @@ function startQuiz(level) {
     showQuestion();
 }
 
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
 function showQuestion() {
     const q = currentQuestions[currentIndex];
     questionEl.textContent = q.question;
+    correctAnswer = q.options[q.correct];
+    shuffledOptions = shuffleArray([...q.options]);
     optionsEl.innerHTML = '';
-    q.options.forEach((opt, i) => {
+    shuffledOptions.forEach((opt, i) => {
         const btn = document.createElement('button');
         btn.textContent = opt;
         btn.addEventListener('click', () => selectOption(i));
@@ -207,14 +221,14 @@ function selectOption(index) {
     selectedOption = index;
     const buttons = optionsEl.querySelectorAll('button');
     buttons.forEach((btn, i) => {
-        if (i === currentQuestions[currentIndex].correct) {
+        if (shuffledOptions[i] === correctAnswer) {
             btn.style.backgroundColor = 'green';
         } else if (i === index) {
             btn.style.backgroundColor = 'red';
         }
         btn.disabled = true;
     });
-    if (index === currentQuestions[currentIndex].correct) {
+    if (shuffledOptions[index] === correctAnswer) {
         score++;
     }
     nextBtn.style.display = 'block';
@@ -244,5 +258,4 @@ shareBtn.addEventListener('click', () => {
     const tweetText = `I scored ${score}/${currentQuestions.length} on the Anoma Quiz by Ap3xV! Are you a true believer? Take the quiz! #Anoma`;
     const url = 'https://example.com/anoma-quiz'; // Replace with actual URL if deployed
     window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}&url=${encodeURIComponent(url)}`, '_blank');
-
 });
