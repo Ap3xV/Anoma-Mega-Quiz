@@ -256,6 +256,7 @@ function showScore() {
 
 shareBtn.addEventListener('click', () => {
     const tweetText = `I scored ${score}/${currentQuestions.length} on the Anoma Quiz by Ap3xV! Are you a true believer? Take the quiz! #Anoma`;
-    const url = 'https://example.com/anoma-quiz'; // Replace with actual URL if deployed
+    const url = 'https://anoma-mega-quiz.vercel.app/'; // Replace with actual URL if deployed
     window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}&url=${encodeURIComponent(url)}`, '_blank');
 });
+
