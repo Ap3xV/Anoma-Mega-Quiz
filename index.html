@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anoma Quiz by Ap3xV</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <img id="logo" src="https://pbs.twimg.com/profile_images/1923389396671168512/04XToCah.jpg" alt="@anoma logo">
+    <h1>Anoma Quiz by <a href="https://x.com/ap3xv_">Ap3xV</a></h1>
+    <p>Test your knowledge of @Anoma — from beginner to advanced. Are you a true believer?</p>
+    <div id="levels">
+        <button id="beginner" class="level-button">BEGINNER</button>
+        <button id="intermediate" class="level-button">INTERMEDIATE</button>
+        <button id="advanced" class="level-button">ADVANCED</button>
+    </div>
+    <div id="quiz" style="display: none;">
+        <p id="progress-text">Question 1 of 10</p>
+        <div class="progress">
+            <div class="progress-bar" style="width: 10%;"></div>
+        </div>
+        <h2 id="question"></h2>
+        <div id="options"></div>
+        <button id="next" style="display: none;">NEXT</button>
+    </div>
+    <div id="score" style="display: none;">
+        <h2 id="score-text"></h2>
+        <p id="message">You are a true Anoma believer!</p>
+        <button id="share">Share to Twitter</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

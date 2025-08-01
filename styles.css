@@ -1,0 +1,66 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+h1 {
+    font-size: 3em;
+}
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+.level-button {
+    width: 200px;
+}
+#beginner {
+    background-color: teal;
+}
+#intermediate {
+    background-color: yellow;
+    color: black;
+}
+#advanced {
+    background-color: red;
+}
+#options button {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    background-color: #333;
+    color: white;
+}
+#next {
+    background-color: #444;
+    color: white;
+}
+#share {
+    background-color: #1DA1F2;
+    color: white;
+}
+.progress {
+    background-color: #333;
+    height: 5px;
+    margin: 20px 0;
+}
+.progress-bar {
+    background-color: teal;
+    height: 100%;
+}
+#logo {
+    width: 100px;
+    margin-bottom: 20px;
+}
+a {
+    color: #1DA1F2;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
